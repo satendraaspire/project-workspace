@@ -13,7 +13,7 @@ export const APP_ROUTES: Routes = [
     // Your route here:
 
     {
-      path: 'flights',
+      path: 'employee',
       loadChildren: () => import('mfe1/flights.module').then(m => m.FlightsModule)
     },
 
