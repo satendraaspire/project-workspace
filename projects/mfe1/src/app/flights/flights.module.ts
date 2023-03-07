@@ -5,11 +5,14 @@ import { RouterModule } from '@angular/router';
 import { FLIGHTS_ROUTES } from './flights.routes';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(FLIGHTS_ROUTES),
-    ReactiveFormsModule
+    ReactiveFormsModule,
     
   ],
   declarations: [

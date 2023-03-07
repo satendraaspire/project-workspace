@@ -7,12 +7,17 @@ import { FlightsModule } from './flights/flights.module';
 import { APP_ROUTES } from './app.routes';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import{ HttpClientModule } from '@angular/common/http'
+
+
 @NgModule({
   imports: [
     BrowserModule,
     FlightsModule,
     RouterModule.forRoot(APP_ROUTES),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+
   ],
   declarations: [
     HomeComponent,

@@ -6,10 +6,16 @@ import { HomeComponent } from './home/home.component';
 import { APP_ROUTES } from './app.routes';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+import{HttpClientModule} from '@angular/common/http'
+
+
+
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    HttpClientModule,
+
   ],
   declarations: [
     AppComponent,

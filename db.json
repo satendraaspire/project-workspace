@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "add-employee": [
+    {
+      "id": 1,
+      "empId": 1000,
+      "firstName": "Ram",
+      "lastName": "Singh",
+      "emilId": "ram@gmail.com",
+      "mobileNum": 9998576432,
+      "address": "Dehradun"
+    },
+    {
+      "empId": "12300",
+      "firstName": "Rohan",
+      "lastName": "Singh",
+      "emilId": "rohan@gmail.com",
+      "mobileNum": "9785347234",
+      "address": "Doon",
+      "id": 2
+    },
+    {
+      "empId": "12001",
+      "firstName": "Sam",
+      "lastName": "Roy",
+      "emilId": "sam@gmail.com",
+      "mobileNum": "9753753864",
+      "address": "Doon",
+      "id": 3
+    }
+  ]
+}
