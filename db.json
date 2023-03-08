@@ -33,6 +33,42 @@
       "mobileNum": "9753753864",
       "address": "Doon",
       "id": 3
+    },
+    {
+      "empId": "556",
+      "firstName": "Deepak",
+      "lastName": "Roy",
+      "emilId": "deepak@gmail.com",
+      "mobileNum": "8764692349",
+      "address": "Doon",
+      "id": 4
     }
+  ],
+  "add-project": [
+    {
+      "id": 1,
+      "projectId": 121,
+      "projectName": "FinTech",
+      "projectDes": "For E-com"
+    },
+    {
+      "projectId": "103",
+      "projectName": "RingR",
+      "projectDes": "For Network",
+      "id": 2
+    },
+    {
+      "projectId": "334",
+      "projectName": "Local",
+      "projectDes": "For Mob",
+      "id": 3
+    },
+    {
+      "projectId": "877",
+      "projectName": "Phyrst",
+      "projectDes": "Ecom",
+      "id": 5
+    }
+    
   ]
 }

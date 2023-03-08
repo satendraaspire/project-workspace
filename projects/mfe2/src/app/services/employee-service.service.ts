@@ -6,13 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeServiceService {
-  url='http://localhost:3000/add-employee';
+  url='http://localhost:3000/add-project';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  addEmployee(res){
-      return this.http.post(this.url,res)
+  addProject(res):Observable<any>{
+      return this.http.post(this.url,res);
+  }
+  getproject():Observable<any>{
+    return this.http.get(this.url);
   }
 }

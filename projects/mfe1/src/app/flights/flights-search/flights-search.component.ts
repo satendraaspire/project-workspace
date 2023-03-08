@@ -46,6 +46,8 @@ export class FlightsSearchComponent implements OnInit {
     else{
       // this.toastr.success("New Employee Added Successfully");
       this.service.addEmployee(this.addEmpoyeeForm.value).subscribe(res=>{
+        this.addEmpoyeeForm.reset();
+        this.submitted=false;
         console.warn(res);
     });
 

@@ -13,7 +13,7 @@
                             formControlName="empId"
                             [ngClass]="{ 'is-invalid': submitted && f.empId.errors }"
                              class="form-control w-50 mt-2 mb-2">
-                            <div *ngIf="f.empId.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.empId.errors" class="invalid-feedback">
                                 <div *ngIf="f.empId.errors.required">ID is required</div>
                             </div> 
                            
@@ -29,14 +29,14 @@
                         <div class="col-12">
                             <label for="">Last Name</label>
                             <input type="text" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" formControlName="lastName" class="form-control w-50 mt-2 mb-2">
-                            <div *ngIf="f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                             </div> 
                         </div>
                         <div class="col-12">
                             <label for="">Email Id</label>
                             <input type="email" [ngClass]="{ 'is-invalid': submitted && f.emilId.errors }" formControlName="emilId" class="form-control w-50 mt-2 mb-2">
-                            <div *ngIf="f.emilId.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.emilId.errors" class="invalid-feedback">
                                 <div *ngIf="f.emilId.errors.required">Email is required</div>
                                 <div *ngIf="f.emilId.errors?.pattern">Invalid Mail Id</div>
                             </div> 
@@ -44,7 +44,7 @@
                         <div class="col-12">
                             <label for="">Mobile</label>
                             <input type="text" [ngClass]="{ 'is-invalid': submitted && f.mobileNum.errors }" formControlName="mobileNum" class="form-control w-50 mt-2 mb-2">
-                            <div *ngIf="f.mobileNum.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.mobileNum.errors" class="invalid-feedback">
                                 <div *ngIf="f.mobileNum.errors.required">Mobile is required</div>
                                 <div *ngIf="f.mobileNum.errors?.pattern">Invalid Number</div>
                             </div> 

@@ -2,8 +2,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
+                <div class="card-tittle card_head">
+                      <button class="btn btn-info" routerLink="/employee-data/add-project">Add Project</button>
+                </div>
 
-                <table class="table">
+                <table class="table mt-3">
                     <thead>
                       <tr>
                         <th scope="col">S.No</th>
@@ -12,25 +15,14 @@
                         <th scope="col">Description</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let data of projectData; let i=index">
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{data.projectId}}</td>
+                        <td>{{data.projectName}}</td>
+                        <td>{{data.projectDes}}</td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td >Larry the Bird</td>
-                        <td>Thorn</td>
-                        <td>@twitter</td>
-                      </tr>
+                     
                     </tbody>
                 </table>
             </div>
