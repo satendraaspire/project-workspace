@@ -5,7 +5,10 @@
                 <div class="card form_input text-center">
                     <div class="row">
                         <div class="col-12 text-center bg-black text-white mb-3">
-                            <h2>Add Details</h2>
+                            <h2>Add New Employee</h2>
+                        </div>
+                        <div class="text-end">
+                            <small class="btn btn-danger" routerLink="/">Back</small>
                         </div>
                         <div class="col-12">
                             <label for="">Employee Id</label>
@@ -35,10 +38,10 @@
                         </div>
                         <div class="col-12">
                             <label for="">Email Id</label>
-                            <input type="email" [ngClass]="{ 'is-invalid': submitted && f.emilId.errors }" formControlName="emilId" class="form-control w-50 mt-2 mb-2">
-                            <div *ngIf="submitted && f.emilId.errors" class="invalid-feedback">
-                                <div *ngIf="f.emilId.errors.required">Email is required</div>
-                                <div *ngIf="f.emilId.errors?.pattern">Invalid Mail Id</div>
+                            <input type="email" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" formControlName="emailId" class="form-control w-50 mt-2 mb-2">
+                            <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                                <div *ngIf="f.emailId.errors.required">Email is required</div>
+                                <div *ngIf="f.emailId.errors?.pattern">Invalid Mail Id</div>
                             </div> 
                         </div>
                         <div class="col-12">
@@ -53,6 +56,12 @@
                         <div class="col-12">
                             <label for="">Address</label>
                             <input type="text" formControlName="address" class="form-control w-50 mt-2 mb-2">
+                        </div>
+                        <div class="col-12">
+                            <label for="">Active</label>
+                            <input type="checkbox" 
+                            formControlName="active" class="check_class mt-2 mb-2">
+                           
                         </div>
                         <div class="text-center mt-4 col-12">
                             <button class="btn btn-danger">Create</button>

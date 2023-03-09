@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormControlName, Validators } from '@angular/forms'
 import{ EmployeeServiceService} from '../../services/employee-service.service'
 
+import { Router } from '@angular/router'
+
 
 @Component({
   selector: 'app-add-project',
@@ -14,7 +16,8 @@ export class AddProjectComponent implements OnInit {
   submitted=false;
 
   constructor(
-    private EmployeeServiceService:EmployeeServiceService
+    private EmployeeServiceService:EmployeeServiceService,
+    private router:Router
   ) {
       this.addProject = new FormGroup({
         projectId: new FormControl('',Validators.required),
@@ -39,6 +42,7 @@ export class AddProjectComponent implements OnInit {
       this.EmployeeServiceService.addProject(this.addProject.value).subscribe(res=>{
         this.addProject.reset();
         this.submitted=false;
+        this.router.navigateByUrl('/employee-data/details');
         console.warn(res);
       })
     }

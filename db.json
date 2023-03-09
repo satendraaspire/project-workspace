@@ -1,47 +1,54 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
   "add-employee": [
     {
       "id": 1,
       "empId": 1000,
       "firstName": "Ram",
       "lastName": "Singh",
-      "emilId": "ram@gmail.com",
+      "emailId": "ram@gmail.com",
       "mobileNum": 9998576432,
-      "address": "Dehradun"
+      "address": "Dehradun",
+      "active": true
     },
     {
       "empId": "12300",
       "firstName": "Rohan",
       "lastName": "Singh",
-      "emilId": "rohan@gmail.com",
+      "emailId": "rohan@gmail.com",
       "mobileNum": "9785347234",
       "address": "Doon",
-      "id": 2
+      "id": 2,
+      "active": false
     },
     {
       "empId": "12001",
       "firstName": "Sam",
       "lastName": "Roy",
-      "emilId": "sam@gmail.com",
+      "emailId": "sam@gmail.com",
       "mobileNum": "9753753864",
       "address": "Doon",
+      "active": true,
       "id": 3
     },
     {
       "empId": "556",
       "firstName": "Deepak",
       "lastName": "Roy",
-      "emilId": "deepak@gmail.com",
+      "emailId": "deepak@gmail.com",
       "mobileNum": "8764692349",
       "address": "Doon",
+      "active": false,
       "id": 4
+    },
+    {
+      "empId": "776",
+      "firstName": "Jay",
+      "lastName": "Singh",
+      "emailId": "jay@gmail.com",
+      "mobileNum": "9874790786",
+      "address": "Delhi",
+      "active": true,
+      "id": 5
     }
   ],
   "add-project": [
@@ -68,7 +75,24 @@
       "projectName": "Phyrst",
       "projectDes": "Ecom",
       "id": 5
+    },
+    {
+      "projectId": "887",
+      "projectName": "Neon",
+      "projectDes": "Work for demo ID",
+      "id": 6
     }
-    
+  ],
+  "assignProject": [
+    {
+      "employeeId": 12001,
+      "projectId": 877,
+      "id": 1
+    },
+    {
+      "projectId": "103",
+      "employeeId": "556",
+      "id": 2
+    }
   ]
 }

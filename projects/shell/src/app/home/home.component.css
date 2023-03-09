@@ -1,0 +1,10 @@
+.card_head{
+    padding: 12px 18px;
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.active_emp_span{
+    font-size: 20px;
+}

@@ -1,1 +1,59 @@
-<p>assign-project works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <form [formGroup]="assignProject" (ngSubmit)="onSubmit()">
+                <div class="card form_input text-center">
+                    <div class="row">
+                        <div class="col-12 text-center bg-black text-white mb-3">
+                            <h2>Assign Projects</h2>
+                        </div>
+                        <p class="text-end">
+                            <small class="btn btn-danger" routerLink="/employee-data/details">Back</small>
+                        </p>
+                        <div class="col-12">
+                            <label for="">Project Id</label>
+                            <select class="form-select w-50 mt-2 mb-2" formControlName="projectId"
+                            [ngClass]="{ 'is-invalid': submitted && f.projectId.errors }"
+                            >
+                            <ng-container  *ngFor="let proId of projectId">
+                            <option [value]='[proId.projectId]'>{{proId.projectId}}({{proId.projectName}})</option>
+                            </ng-container>
+                           
+                            </select>
+                            <div *ngIf="submitted && f.projectId.errors" class="invalid-feedback">
+                                <div *ngIf="f.projectId.errors.required">Project ID is required</div>
+                            </div> 
+                           
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="">Employee Id</label>
+                            <select class="form-select w-50 mt-2 mb-2"  formControlName="employeeId"
+                            [ngClass]="{ 'is-invalid': submitted && f.employeeId.errors }"
+                            >
+                            <ng-container  *ngFor="let empId of employeeId">
+                                <option [value]="[empId.empId]">{{empId.empId}}({{empId.firstName}})</option>
+                            </ng-container>
+                            </select>
+                            
+                            <div *ngIf="submitted && f.employeeId.errors" class="invalid-feedback">
+                                <div *ngIf="f.employeeId.errors.required">Employee Id is required</div>
+                            </div> 
+                        </div>
+                       
+
+                        <div class="text-center mt-4 col-12">
+                            <button class="btn btn-dark">Create</button>
+                        </div>
+
+                    </div>
+
+                </div>                
+
+            </form>
+
+
+        </div>
+    </div>
+
+</div>

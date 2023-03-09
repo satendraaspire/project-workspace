@@ -1,0 +1,11 @@
+
+.card{
+    padding: 20px 20px;
+}
+.form_input select{
+    margin-left: 25%;
+}
+small{
+    padding: 0px 12px;
+    font-size: 14px;
+}

@@ -9,6 +9,7 @@ import{ EmployeeServiceService} from '../../services/employee-service.service'
 export class EmployeeDetailsComponent implements OnInit {
   employeeData: any;
   projectData: any;
+  assginProjectDetails: Object;
 
   constructor(
     private employeeServiceService:EmployeeServiceService
@@ -16,7 +17,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getproject();
-
+    this.gerAssginProject();
   }
   getproject(){
     this.employeeServiceService.getproject().subscribe(res=>{
@@ -24,5 +25,10 @@ export class EmployeeDetailsComponent implements OnInit {
       console.warn(this.projectData)
     })
   }  
+  gerAssginProject(){
+    this.employeeServiceService.getAssginProject().subscribe(res=>{
+      this.assginProjectDetails=res
+    })
+  }
 
 }

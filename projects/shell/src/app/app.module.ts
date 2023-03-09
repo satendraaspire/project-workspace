@@ -7,6 +7,8 @@ import { APP_ROUTES } from './app.routes';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import{HttpClientModule} from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { EmployeFilterPipe } from './Pipes/employe-filter.pipe';
 
 
 
@@ -15,12 +17,14 @@ import{HttpClientModule} from '@angular/common/http'
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
     HttpClientModule,
+    FormsModule
 
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EmployeFilterPipe
   ],
   providers: [],
   bootstrap: [AppComponent]

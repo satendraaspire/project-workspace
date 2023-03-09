@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-tittle card_head">
-                      <button class="btn btn-info" routerLink="/employee-data/add-project">Add Project</button>
+                      <button class="btn btn-dark text-white" routerLink="/employee-data/add-project">Add Project</button>
                 </div>
 
                 <table class="table mt-3">
@@ -29,6 +29,34 @@
 
 
         </div>
+        <div class="col-md-6">
+          <div class="card">
+              <div class="card-tittle card_head">
+                    <button class="btn btn-dark text-white" routerLink="/employee-data/Assign-project">Assign Project</button>
+              </div>
+
+              <table class="table mt-3">
+                  <thead>
+                    <tr>
+                      <th scope="col">S.No</th>
+                      <th scope="col">Project ID</th>
+                      <th scope="col">Employee ID</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let data of assginProjectDetails; let i=index">
+                      <th scope="row">{{i+1}}</th>
+                      <td> {{data.projectId}} </td>
+                      <td> {{data.employeeId}} </td>
+                      
+                    </tr>
+                   
+                  </tbody>
+              </table>
+          </div>
+
+
+      </div>
 
     </div>
 

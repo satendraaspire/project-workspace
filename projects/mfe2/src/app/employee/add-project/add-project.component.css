@@ -5,3 +5,7 @@
 .form_input input{
     margin-left: 25%;
 }
+small{
+    padding: 0px 12px;
+    font-size: 14px;
+}
