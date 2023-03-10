@@ -49,6 +49,46 @@
       "address": "Delhi",
       "active": true,
       "id": 5
+    },
+    {
+      "empId": "2345",
+      "firstName": "satendra",
+      "lastName": "Singh",
+      "emailId": "satendra@gmail.com",
+      "mobileNum": "9997658876",
+      "address": "Doon",
+      "active": true,
+      "id": 6
+    },
+    {
+      "empId": "909",
+      "firstName": "Manoj",
+      "lastName": "singh",
+      "emailId": "manoj@gmail.com",
+      "mobileNum": "9987509843",
+      "address": "Doon",
+      "active": true,
+      "id": 7
+    },
+    {
+      "empId": "1234",
+      "firstName": "Mani ",
+      "lastName": "Singh",
+      "emailId": "mani@gmail.com",
+      "mobileNum": "9898790909",
+      "address": "Pune",
+      "active": true,
+      "id": 8
+    },
+    {
+      "empId": "10001",
+      "firstName": "Meena",
+      "lastName": "Roy",
+      "emailId": "meena@gmail.com",
+      "mobileNum": "9897953589",
+      "address": "Goa",
+      "active": true,
+      "id": 9
     }
   ],
   "add-project": [
@@ -81,6 +121,12 @@
       "projectName": "Neon",
       "projectDes": "Work for demo ID",
       "id": 6
+    },
+    {
+      "projectId": "776",
+      "projectName": "Demo Project",
+      "projectDes": "This is for Angular demo",
+      "id": 7
     }
   ],
   "assignProject": [
@@ -93,6 +139,11 @@
       "projectId": "103",
       "employeeId": "556",
       "id": 2
+    },
+    {
+      "projectId": "776",
+      "employeeId": "2345",
+      "id": 3
     }
   ]
 }

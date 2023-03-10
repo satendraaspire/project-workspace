@@ -3,6 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import { FormGroup, FormControl,FormControlName, Validators } from '@angular/forms';
 import { EmployeeAPIService } from '../../services/employee-api.service';
 
+import {Router} from '@angular/router'
+
 
 @Component({
   selector: 'app-flights-search',
@@ -15,6 +17,7 @@ export class FlightsSearchComponent implements OnInit {
 
   constructor(
     private service:EmployeeAPIService,
+    private router:Router
   ) {
     this.addEmpoyeeForm = new FormGroup({
       empId: new FormControl('',[Validators.required]),
@@ -35,12 +38,13 @@ export class FlightsSearchComponent implements OnInit {
    }
    getEmployee(){
     this.service.getEmployee().subscribe(res=>{
-      console.warn("getDAta",res);
     })
    }
   onSubmit(){
     this.submitted=true;
     if(this.addEmpoyeeForm.invalid){
+      alert("Invalid Submit")
+
       // this.toastr.error("Somthing Went Wrong");
       return;
     }
@@ -49,7 +53,8 @@ export class FlightsSearchComponent implements OnInit {
       this.service.addEmployee(this.addEmpoyeeForm.value).subscribe(res=>{
         this.addEmpoyeeForm.reset();
         this.submitted=false;
-        console.warn(res);
+        this.router.navigateByUrl('/');
+        console.warn(this.addEmpoyeeForm.value);
     });
 
     console.log(this.addEmpoyeeForm);
