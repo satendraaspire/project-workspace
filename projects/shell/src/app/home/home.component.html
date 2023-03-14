@@ -6,6 +6,8 @@
                     <div>
                         <span class="active_emp_span">Check for Active Employee</span>
                         <input class="mx-3" type="checkbox" [(ngModel)]="employeeInput">
+                        <input class="mx-3" type="text" [(ngModel)]="employeeInputValue">
+
                         <small *ngIf="employeeInput" class="mx-2 text-success">Active Employee List Below</small>
 
                     </div>
@@ -29,7 +31,7 @@
 
                       </tr>
                     </thead>
-                    <tbody *ngFor="let data of employeeData | employeFilter:employeeInput; let i=index">
+                    <tbody *ngFor="let data of addEmp ;let i=index">
                       <tr>
                         <th scope="row">{{i+1}}</th>
                         <td>{{data.empId}}</td>
