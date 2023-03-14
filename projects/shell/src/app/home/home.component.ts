@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import{ ShellServiceService } from '../shell-service.service'
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +14,7 @@ export class HomeComponent implements OnInit {
   employeeInput: any='';
 
   constructor(
-    private ShellServiceService:ShellServiceService
+    public ShellServiceService:ShellServiceService
   ) { }
 
   ngOnInit() {

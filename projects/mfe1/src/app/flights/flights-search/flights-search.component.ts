@@ -31,44 +31,26 @@ export class FlightsSearchComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   this.getEmployee();
   }
   get f() { 
     return this.addEmpoyeeForm.controls;
-   }
-   getEmployee(){
-    this.service.getEmployee().subscribe(res=>{
-    })
    }
   onSubmit(){
     this.submitted=true;
     if(this.addEmpoyeeForm.invalid){
       alert("Invalid Submit")
-
-      // this.toastr.error("Somthing Went Wrong");
       return;
     }
     else{
-      // this.toastr.success("New Employee Added Successfully");
       this.service.addEmployee(this.addEmpoyeeForm.value).subscribe(res=>{
         this.addEmpoyeeForm.reset();
         this.submitted=false;
         this.router.navigateByUrl('/');
-        console.warn(this.addEmpoyeeForm.value);
     });
 
-    console.log(this.addEmpoyeeForm);
 
     }
 
-  }
-
-  search(): void {
-    alert('Not implemented for this demo!');
-  }
-
-  terms(): void {
-    alert('Not implemented for this demo!');
   }
 
 }

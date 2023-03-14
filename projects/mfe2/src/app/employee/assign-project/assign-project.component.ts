@@ -27,8 +27,7 @@ export class AssignProjectComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getEmployee();
-    this.getProject();
+
 
   }
   onSubmit(){
@@ -40,21 +39,9 @@ export class AssignProjectComponent implements OnInit {
         this.assignProject.reset();
         this.submitted=false;
         this.router.navigateByUrl('/employee-data/details')
-        console.warn(res);
       })
     }
-   console.warn(this.assignProject.value)
   }
-  getEmployee(){
-    this.EmployeeServiceService.getEmployee().subscribe(res=>{
-      this.employeeId=res;
-    })
-  };
-  getProject(){
-    this.EmployeeServiceService.getproject().subscribe(res=>{
-      this.projectId=res;
-    })
-  };
 
   get f(){
     return this.assignProject.controls;

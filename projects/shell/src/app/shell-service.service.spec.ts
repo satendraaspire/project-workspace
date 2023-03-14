@@ -11,8 +11,11 @@ describe('ShellServiceService', () => {
 
   beforeEach(() => {
        // TODO: spy on other methods too
-    
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new ShellServiceService(httpClientSpy);
+  });
+  it('should be return url of shell ', () => {
+    expect(service.url).toBeTruthy('http://localhost:3000/add-employee');
   });
 
   it('should be get employee data ', () => {
@@ -26,14 +29,22 @@ describe('ShellServiceService', () => {
         "address": "Dehradun",
         "active": true
       },
+
   ]
   let employeeDataRes;
+  // spyOn(service,'getAllEmployeeData').and.returnValue(of(mockData));
+  // service.getAllEmployeeData().subscribe(res=>{
+  //   employeeDataRes=res;
+  // })
+  // expect(employeeDataRes).toBeTruthy(mockData);
+
   httpClientSpy.get.and.returnValue(of(mockData));
   service.getAllEmployeeData().subscribe(res=>{
     employeeDataRes=res;
+    expect(employeeDataRes).toBeTruthy(mockData);
   })
 
 
-    expect(employeeDataRes).toBeTruthy(mockData);
+  
   });
 });

@@ -22,7 +22,6 @@ export class EmployeeDetailsComponent implements OnInit {
   getproject(){
     this.employeeServiceService.getproject().subscribe(res=>{
       this.projectData = res;
-      console.warn(this.projectData)
     })
   }  
   gerAssginProject(){

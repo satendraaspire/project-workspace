@@ -43,7 +43,6 @@ export class AddProjectComponent implements OnInit {
         this.addProject.reset();
         this.submitted=false;
         this.router.navigateByUrl('/employee-data/details');
-        console.warn(res);
       })
     }
 
