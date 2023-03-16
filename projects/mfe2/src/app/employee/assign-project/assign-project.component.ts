@@ -15,6 +15,8 @@ export class AssignProjectComponent implements OnInit {
   submitted=false
   employeeId: any;
   projectId: any;
+  projectData: any;
+  assginProjectDetails: any;
 
   constructor(
     private EmployeeServiceService:EmployeeServiceService,
@@ -27,8 +29,20 @@ export class AssignProjectComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getproject();
+    this.gerAssginProject();
 
 
+  }
+  getproject(){
+    this.EmployeeServiceService.getproject().subscribe(res=>{
+      this.projectData = res;
+    })
+  }  
+  gerAssginProject(){
+    this.EmployeeServiceService.getEmployee().subscribe(res=>{
+      this.employeeId=res
+    })
   }
   onSubmit(){
     this.submitted=true;

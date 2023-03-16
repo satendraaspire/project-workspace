@@ -15,7 +15,7 @@
                             <select class="form-select w-50 mt-2 mb-2" formControlName="projectId"
                             [ngClass]="{ 'is-invalid': submitted && f.projectId.errors }"
                             >
-                            <ng-container  *ngFor="let proId of projectId">
+                            <ng-container  *ngFor="let proId of projectData">
                             <option [value]='[proId.projectId]'>{{proId.projectId}}({{proId.projectName}})</option>
                             </ng-container>
                            

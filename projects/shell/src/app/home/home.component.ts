@@ -4,6 +4,11 @@ import{ ShellServiceService } from '../shell-service.service'
 import { Observable, Subject, from, of } from 'rxjs';
 import { debounceTime, filter, toArray } from 'rxjs/operators'
 
+import{ Store,select } from '@ngrx/store'
+import * as UserActions from '../user.actions'
+import * as fromUser from '../user.selectors'
+
+
 
 
 @Component({
@@ -121,6 +126,21 @@ export class HomeComponent implements OnInit {
   ]
   addEmp: any[];
 
+
+  constructor(
+    private ShellServiceService:ShellServiceService,
+    private store:Store
+  ) { }
+
+  ngOnInit() {
+    this.store.dispatch( new UserActions.loadUsers() );
+    this.store.pipe(select(fromUser.getUsers)).subscribe(res=>{
+        console.log("DAta coming",res)
+    });
+    this.getEmployeeData();
+    this.addEmp = this.employeeDataList;
+ 
+  }
   get employeeInput(){
     console.log("get")
     return this._employeeInput;
@@ -140,15 +160,7 @@ export class HomeComponent implements OnInit {
       this._employeeInputValue=value;
      this.addEmp= this.filterInputData(value)
   }
-  constructor(
-    public ShellServiceService:ShellServiceService
-  ) { }
 
-  ngOnInit() {
-    this.getEmployeeData();
-    this.addEmp = this.employeeDataList;
- 
-  }
   filterData(event){
     console.log(event)
   }

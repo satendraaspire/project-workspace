@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import{ EmployeeServiceService} from '../../services/employee-service.service'
 
+import { Observable, Subject, from, of } from 'rxjs';
+import { debounceTime, filter, toArray } from 'rxjs/operators'
+
+import{ Store,select } from '@ngrx/store'
+import * as UserActions from '../../../../../shell/src/app/user.actions'
+import * as fromUser from '../../../../../shell/src/app/user.selectors'
+
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
@@ -12,10 +19,15 @@ export class EmployeeDetailsComponent implements OnInit {
   assginProjectDetails: Object;
 
   constructor(
-    private employeeServiceService:EmployeeServiceService
+    private employeeServiceService:EmployeeServiceService,
+    private store:Store
   ) { }
 
   ngOnInit(): void {
+    this.store.dispatch( new UserActions.loadUsers() );
+    this.store.pipe(select(fromUser.getUsers)).subscribe(res=>{
+        console.log("DAta coming",res)
+    });
     this.getproject();
     this.gerAssginProject();
   }
