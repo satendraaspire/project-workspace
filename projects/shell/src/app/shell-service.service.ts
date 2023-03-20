@@ -20,6 +20,8 @@ export class ShellServiceService {
     private http:HttpClient
   ) { 
     this.getAllEmployeeDataNew();
+    this.getAssginProject();
+    alert("api")
     // this.getAllEmployeeDataNewOne();
   }
   getAllEmployeeData():Observable<any>{
@@ -55,7 +57,24 @@ getAssginProject(){
     }
   ])
 
+  assignProject.pipe(
+    mergeMap( res =>{
+       this.empId = res.employeeId;
+       console.log("emplId",this.empId);
+       
+       this.projectId = res.projectId;
+       console.log("projectId",this.projectId);
 
+       const employeeData = this.http.get(`http://localhost:3000/add-employee?empId=${res.employeeId}`);
+       const projectData = this.http.get(`http://localhost:3000/add-project?projectId=${res.projectId}`);
+
+       return forkJoin([employeeData,projectData]);
+       
+  
+    }),toArray())
+  .subscribe(user =>{
+    return  this.employeeProjectRes = user;
+  })
 }
 getproject():Observable<any>{
   return this.http.get(this.url3);

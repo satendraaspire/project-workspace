@@ -15,7 +15,9 @@ export class UserEffects {
   constructor(
     private actions$: Actions,
     private shellservice:ShellServiceService
-    ) {}
+    ) {
+    alert("ng")
+    }
 
  
   loadUsers$ = createEffect(()=>
@@ -27,16 +29,16 @@ export class UserEffects {
    
     )
   )
-  this.actions$.pipe(
-    ofType(UserActions.UserActionsTypes.loadUsers),
-    mergeMap(
-      action => this.shellservice.getAssginProject().pipe(
-        map(
-          res => ( new UserActions.loadUsersSuccess({data:res}) )
-        )
-      )
-    )
-  )
+  // this.actions$.pipe(
+  //   ofType(UserActions.UserActionsTypes.loadUsers),
+  //   mergeMap(
+  //     action => this.shellservice.getAssginProject().pipe(
+  //       map(
+  //         res => ( new UserActions.loadUsersSuccess({data:res}) )
+  //       )
+  //     )
+  //   )
+  // )
   ) 
 
 
