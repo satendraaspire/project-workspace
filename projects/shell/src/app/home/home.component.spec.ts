@@ -12,7 +12,7 @@ describe('EmployeeDetailsComponent', () => {
   beforeEach(async () => {
     let Store
     mockShellService = jasmine.createSpyObj(['getAllEmployeeData']);
-   homeComponent = new HomeComponent(mockShellService,Store);
+   homeComponent = new HomeComponent(mockShellService);
  
   });
 

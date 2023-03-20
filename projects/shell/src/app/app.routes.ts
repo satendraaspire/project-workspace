@@ -2,11 +2,16 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { loadRemoteModule } from '@angular-architects/module-federation';
+import { AssginProjectComponent } from './assgin-project/assgin-project.component';
 export const APP_ROUTES: Routes = [
     {
       path: '',
       component: HomeComponent,
       pathMatch: 'full'
+    },
+    {
+      path: 'assgin-project',
+      component: AssginProjectComponent,
     },
     {
       path: 'employee',

@@ -15,6 +15,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './user.effects';
+import { AssginProjectComponent } from './assgin-project/assgin-project.component';
 
 
 
@@ -35,7 +36,8 @@ import { UserEffects } from './user.effects';
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    EmployeFilterPipe
+    EmployeFilterPipe,
+    AssginProjectComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

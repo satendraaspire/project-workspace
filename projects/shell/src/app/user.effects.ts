@@ -4,7 +4,7 @@ import { Observable, observable,of } from 'rxjs'
 import { Action} from '@ngrx/store'
 import * as UserActions from './user.actions'
 import { mergeMap,map,catchError }from 'rxjs/operators'
-import { EmployeeServiceService } from '../../../mfe2/src/app/services/employee-service.service'
+import { ShellServiceService } from '../../../shell/src/app/shell-service.service'
 
  
 
@@ -14,11 +14,19 @@ export class UserEffects {
 
   constructor(
     private actions$: Actions,
-    private shellservice:EmployeeServiceService
+    private shellservice:ShellServiceService
     ) {}
 
  
   loadUsers$ = createEffect(()=>
+  this.actions$.pipe(
+    ofType(UserActions.UserActionsTypes.loadUsers),
+    mergeMap(
+      async (
+        action) => new UserActions.loadUsersSuccess({ data: this.shellservice.employeeProjectRes })
+   
+    )
+  )
   this.actions$.pipe(
     ofType(UserActions.UserActionsTypes.loadUsers),
     mergeMap(

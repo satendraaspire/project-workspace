@@ -52,7 +52,7 @@ export class AssignProjectComponent implements OnInit {
       this.EmployeeServiceService.assginProject(this.assignProject.value).subscribe(res=>{
         this.assignProject.reset();
         this.submitted=false;
-        this.router.navigateByUrl('/employee-data/details')
+        this.router.navigateByUrl('/employee/add-employee')
       })
     }
   }
