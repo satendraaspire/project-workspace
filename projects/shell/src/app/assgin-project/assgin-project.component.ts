@@ -23,7 +23,6 @@ export class AssginProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.getemployeeData();
-    alert("work")
 
   }
 

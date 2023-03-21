@@ -16,7 +16,7 @@ export class UserEffects {
     private actions$: Actions,
     private shellservice:ShellServiceService
     ) {
-    alert("ng")
+
     }
 
  
@@ -24,8 +24,11 @@ export class UserEffects {
   this.actions$.pipe(
     ofType(UserActions.UserActionsTypes.loadUsers),
     mergeMap(
-      async (
-        action) => new UserActions.loadUsersSuccess({ data: this.shellservice.employeeProjectRes })
+        action => this.shellservice.getNewData().pipe(
+          map(
+            res=> ( new UserActions.loadUsersSuccess({ data: res}))
+          )
+        )        
    
     )
   )

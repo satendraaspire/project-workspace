@@ -23,8 +23,13 @@
                   <tbody>
                     <tr *ngFor="let data of projectData; let i=index">
                       <th scope="row">{{i+1}}</th>
-                      <td> {{data.projectId}} </td>
-                      <td> {{data.employeeId}} </td>
+                      <td> {{data[1][0].projectId}} </td>
+                      <td> {{data[1][0].projectName}} </td>
+                      <td> {{data[0][0].empId}} </td>
+                      <td> {{data[0][0].firstName}} {{data[0][0].lastName}} </td>
+                      <td> {{data[0][0].emailId}} </td>
+                      <td> {{data[0][0].mobileNum}} </td>
+
                       
                     </tr>
                    

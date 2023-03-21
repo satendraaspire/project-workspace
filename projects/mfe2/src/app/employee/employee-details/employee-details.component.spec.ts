@@ -10,9 +10,8 @@ describe('EmployeeDetailsComponent', () => {
   let employeeServiceService
 
   beforeEach(async () => {
-    let store;
     employeeServiceService = jasmine.createSpyObj(['getproject','getAssginProject','addProject','assginProject']);
-    component = new EmployeeDetailsComponent(employeeServiceService,store);
+    component = new EmployeeDetailsComponent(employeeServiceService);
 
   });
   it('should be get project data ', () => {

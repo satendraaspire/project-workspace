@@ -60,7 +60,7 @@ describe('AssignProjectComponent', () => {
   } else {
     assginComponent.assignProject.reset();
     assginComponent.submitted=false;
-    routerSpy.navigateByUrl('/employee-data/details')
+    routerSpy.navigateByUrl('/assgin-project')
     expect(assginComponent.assignProject.valid).toBeTruthy();
     
   }
