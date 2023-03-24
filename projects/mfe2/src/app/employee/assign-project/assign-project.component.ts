@@ -30,7 +30,7 @@ export class AssignProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.getproject();
-    this.gerAssginProject();
+    this.getEmployee();
 
 
   }
@@ -39,7 +39,7 @@ export class AssignProjectComponent implements OnInit {
       this.projectData = res;
     })
   }  
-  gerAssginProject(){
+  getEmployee(){
     this.EmployeeServiceService.getEmployee().subscribe(res=>{
       this.employeeId=res
     })

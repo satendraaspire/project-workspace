@@ -17,10 +17,8 @@ export class ShellServiceService {
   employeeProjectRes: any[]=[];
 
   constructor(
-    private http:HttpClient
+    public http:HttpClient
   ) { 
-    this.getAllEmployeeDataNew();
-    this.getNewData();
   }
   getAllEmployeeData():Observable<any>{
     return this.http.get(this.url);
@@ -93,24 +91,6 @@ export class ShellServiceService {
 getproject():Observable<any>{
   return this.http.get(this.url3);
 }
-getAllEmployeeDataNew(){
- const one = this.http.get(this.url);
- const two = this.http.get(this.url2);
- const three = this.http.get(this.url3);
 
- forkJoin([one,two,three]).pipe(
- ).subscribe(res=>{
-   
- })
-}
-
-
-// getAllEmployeeDataNewOne(){
-//   this.http.get(this.url).pipe(
-//     mergeMap(res=> res+'sam')
-//   ).subscribe(res=>{
-//     console.warn("one",res)
-//   })
-//  }
 
 }

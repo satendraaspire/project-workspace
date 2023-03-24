@@ -127,7 +127,7 @@ export class HomeComponent implements OnInit {
     private ShellServiceService:ShellServiceService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getEmployeeData();
     this.addEmp = this.employeeDataList;
  
@@ -137,7 +137,7 @@ export class HomeComponent implements OnInit {
   }
   set employeeInput(value){
       this._employeeInput=value;
-     this.addEmp= this.filterInputData(value)
+     this.addEmp= this.filterInputData()
   }
 
   get employeeInputValue(){
@@ -145,11 +145,9 @@ export class HomeComponent implements OnInit {
   }
   set employeeInputValue(value){
       this._employeeInputValue=value;
-     this.addEmp= this.filterInputData(value)
+     this.addEmp= this.filterInputData()
   }
 
-  filterData(event){
-  }
   getEmployeeData(){
     this.ShellServiceService.getAllEmployeeData().pipe(
       filter(res => res.firstName == "Ram")
@@ -157,7 +155,7 @@ export class HomeComponent implements OnInit {
       this.employeeData=res;
     })
   }
-  filterInputData(filterVal){
+  filterInputData(){
      if(!this._employeeInputValue && this._employeeInput == false) {
       return this.employeeDataList;
     }

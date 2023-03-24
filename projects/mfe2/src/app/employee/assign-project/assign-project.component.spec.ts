@@ -11,7 +11,7 @@ describe('AssignProjectComponent', () => {
   let routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']); 
 
   beforeEach(async () => {
-    employeeServiceService = jasmine.createSpyObj(['assginProject']);
+    employeeServiceService = jasmine.createSpyObj(['assginProject','getEmployee','getproject']);
     assginComponent = new AssignProjectComponent(employeeServiceService,routerSpy);
 
   });
@@ -27,6 +27,27 @@ describe('AssignProjectComponent', () => {
   employeeServiceService.assginProject.and.returnValue(of(mockData));
   assginComponent.f;
    expect(assginComponent.f).toBeTruthy(mockData);
+  });
+  it('Should retun getassginData',()=>{
+    let mockData=[{
+      "id": 1,
+      "employeeId": 12001,
+      "projectId": 877,
+    }]
+    employeeServiceService.getEmployee.and.returnValue(of(mockData))
+    assginComponent.getEmployee();
+    expect(assginComponent.employeeId).toBeTruthy(mockData);
+  });
+  it('Should retun getProjectData',()=>{
+    let mockData=[{
+      "id": 1,
+      "projectId": 121,
+      "projectName": "FinTech",
+      "projectDes": "For E-com"
+    }]
+    employeeServiceService.getproject.and.returnValue(of(mockData));
+    assginComponent.getproject();
+    expect(assginComponent.projectData).toBeTruthy(mockData);
   });
 
 
@@ -67,8 +88,6 @@ describe('AssignProjectComponent', () => {
 
     
   });
-
-
 
   it('should be ng data', () => {
    expect(assginComponent.ngOnInit()).toBeUndefined();

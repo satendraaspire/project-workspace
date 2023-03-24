@@ -1,8 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ShellServiceService } from './shell-service.service';
-import { of } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { concatAll, concatMap, toArray } from 'rxjs/operators';
 
 
 describe('ShellServiceService', () => {
@@ -32,19 +33,60 @@ describe('ShellServiceService', () => {
 
   ]
   let employeeDataRes;
-  // spyOn(service,'getAllEmployeeData').and.returnValue(of(mockData));
-  // service.getAllEmployeeData().subscribe(res=>{
-  //   employeeDataRes=res;
-  // })
-  // expect(employeeDataRes).toBeTruthy(mockData);
-
   httpClientSpy.get.and.returnValue(of(mockData));
   service.getAllEmployeeData().subscribe(res=>{
     employeeDataRes=res;
     expect(employeeDataRes).toBeTruthy(mockData);
   })
+  });
+
+  it('should be get project data ', () => {
+    let mockData=[{
+      "id": 1,
+      "projectId": 121,
+      "projectName": "FinTech",
+      "projectDes": "For E-com"
+      },
+
+  ]
+  let employeeDataRes;
+  httpClientSpy.get.and.returnValue(of(mockData));
+  service.getproject().subscribe(res=>{
+    employeeDataRes=res;
+    expect(employeeDataRes).toBeTruthy(mockData);
+  })
+  });
+  it('should be get merge data ', () => {
+    let mockData=[{
+      "id": 1,
+      "projectId": 121,
+      "projectName": "FinTech",
+      "projectDes": "For E-com"
+      },
+
+  ]
+  let employeeDataRes;
+  httpClientSpy.get.and.returnValue(of(mockData));
+  service.getNewData().pipe(
+    concatMap(
+      (res:any)=> res.map(
+        log =>{
+          const employeeData = service.http.get(`http://localhost:3000/add-employee?empId=${log.employeeId}`);
+          const projectData = service.http.get(`http://localhost:3000/add-project?projectId=${log.projectId}`);
+   
+          return forkJoin([employeeData,projectData]);
+        }
+
+      )  
+    ),concatAll(),toArray()
+  
+  ).subscribe(res=>{
+    employeeDataRes=res;
+    console.log(res)
+    expect(employeeDataRes).toBeTruthy(mockData);
+  })
+  });
 
 
   
-  });
 });

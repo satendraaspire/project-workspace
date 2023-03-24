@@ -8,7 +8,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import{HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-import { EmployeFilterPipe } from './Pipes/employe-filter.pipe';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -36,7 +35,6 @@ import { AssginProjectComponent } from './assgin-project/assgin-project.componen
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    EmployeFilterPipe,
     AssginProjectComponent
   ],
   providers: [],
