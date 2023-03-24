@@ -16,7 +16,7 @@ describe('AssginProjectComponent', () => {
 
   });
 
-  it('should create', () => {
+  it('should create assgin', () => {
 
     expect(component).toBeTruthy();
   });
